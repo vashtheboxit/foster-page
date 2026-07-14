@@ -8,7 +8,7 @@ age: 7 years
 sex: Female
 breed: Boxer
 color: Brindle
-weight: ~68 lbs
+weight: ~58 lbs
 heroImage: images/abby-hero.jpg
 applyUrl: https://form.jotform.com/mustluvdogs/adoption-application
 bio: "I'm a calm, easygoing brindle Boxer who settles into a home almost immediately. I ask for very little besides a comfortable place to relax and someone to spend time with."
@@ -133,6 +133,6 @@ Abby would likely do well with someone looking for:
 - Sensitive to loud noises
 - Nervous around metal grates and sewer covers
 - Beautiful brindle coat
-- Estimated 66–70 lbs
+- Estimated 56–60 lbs
 
 _Last updated: July 2026_

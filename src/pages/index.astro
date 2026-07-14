@@ -6,6 +6,8 @@ const dogs = await getCollection('dogs');
 const currentDog = dogs.find((dog) => dog.data.current) ?? dogs[0];
 const { title, status, rescue, location, age, sex, breed, weight, heroImage, applyUrl, bio, traits, quickFacts, idealHome, story } = currentDog.data;
 const base = import.meta.env.BASE_URL;
+const rescueFacebookUrl = 'https://www.facebook.com/Mustluvboxersrescue';
+const rescueWebsiteUrl = 'https://www.mustluvboxersrescue.com/';
 ---
 
 <html lang="en">
@@ -21,9 +23,14 @@ const base = import.meta.env.BASE_URL;
 	<body class="bg-bg text-text font-body antialiased">
 		<div class="max-w-[1400px] mx-auto px-6 md:px-12">
 			<nav class="py-7">
-				<div class="font-heading font-bold text-xl">
+				<a
+					href={rescueFacebookUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-heading font-bold text-xl hover:opacity-80 transition-opacity"
+				>
 					Must Luv <span class="text-pink">Boxers</span> Rescue
-				</div>
+				</a>
 			</nav>
 
 			<div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 py-6 md:py-16">
@@ -140,7 +147,35 @@ const base = import.meta.env.BASE_URL;
 		<footer class="text-center text-text-muted text-sm pb-16">
 			<div class="font-heading text-text text-lg mb-2">{rescue}</div>
 			<div>Serving WA, OR &amp; Northern ID</div>
-			<div class="font-accent text-2xl text-[#C9748F] mt-4">Thank you for helping rescue dogs find loving homes.</div>
+
+			<div class="flex items-center justify-center gap-4 mt-6">
+				<a
+					href={rescueFacebookUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={`${rescue} on Facebook`}
+					class="flex items-center justify-center w-11 h-11 rounded-full bg-pink-light text-[#C9748F] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+						<path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
+					</svg>
+				</a>
+				<a
+					href={rescueWebsiteUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={`${rescue} website`}
+					class="flex items-center justify-center w-11 h-11 rounded-full bg-pink-light text-[#C9748F] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+						<circle cx="12" cy="12" r="9" />
+						<path d="M3 12h18" />
+						<path d="M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9s1.3-6.5 3.8-9Z" />
+					</svg>
+				</a>
+			</div>
+
+			<div class="font-accent text-2xl text-[#C9748F] mt-6">Thank you for helping rescue dogs find loving homes.</div>
 		</footer>
 	</body>
 </html>
