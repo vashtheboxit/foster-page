@@ -28,6 +28,15 @@ idealHome:
   - Settles nicely indoors
   - Patient leash companion
 story: "Abby and her sister entered rescue after their owner became disabled and could no longer care for them. Despite losing the only home she'd known, Abby has remained gentle, trusting, and incredibly sweet — one of the easiest foster dogs we've cared for."
+walking: "Abby enjoys walks but is a fairly strong girl and can pull on leash. She's also sensitive to sudden loud noises and unfamiliar surfaces — metal grates and storm drains can startle her, though with patience and encouragement she's continuing to build confidence."
+homeLife:
+  - Doesn't bark
+  - Doesn't whine
+  - Sleeps quietly
+  - Excellent in her crate
+  - House trained
+  - Easy to live with
+otherDogs: "Abby has done well with other dogs. Rescue evaluations described her as playful and appropriately social — she reads other dogs well and responds appropriately to corrections."
 ---
 
 # Abby

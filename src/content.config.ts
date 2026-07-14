@@ -21,6 +21,9 @@ const dogs = defineCollection({
     quickFacts: z.array(z.string()),
     idealHome: z.array(z.string()),
     story: z.string(),
+    walking: z.string(),
+    homeLife: z.array(z.string()),
+    otherDogs: z.string(),
   }),
 });
 

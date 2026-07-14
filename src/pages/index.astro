@@ -4,7 +4,14 @@ import { getCollection } from 'astro:content';
 
 const dogs = await getCollection('dogs');
 const currentDog = dogs.find((dog) => dog.data.current) ?? dogs[0];
-const { title, status, rescue, location, age, sex, breed, weight, heroImage, applyUrl, bio, traits, quickFacts, idealHome, story } = currentDog.data;
+const { title, status, rescue, location, age, sex, breed, weight, heroImage, applyUrl, bio, traits, quickFacts, idealHome, story, walking, homeLife, otherDogs } = currentDog.data;
+
+const comingSoon = [
+	{ icon: '🎓', title: 'Training & Manners' },
+	{ icon: '🩺', title: 'Health' },
+	{ icon: '📸', title: 'Gallery' },
+	{ icon: '📔', title: 'Foster Journal' },
+];
 const base = import.meta.env.BASE_URL;
 const rescueFacebookUrl = 'https://www.facebook.com/Mustluvboxersrescue';
 const rescueWebsiteUrl = 'https://www.mustluvboxersrescue.com/';
@@ -120,6 +127,26 @@ const rescueWebsiteUrl = 'https://www.mustluvboxersrescue.com/';
 		</section>
 
 		<div class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24">
+			<h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-10">Life With Abby</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-pink-light rounded-[22px] p-7">
+					<h3 class="font-heading font-semibold text-lg mb-4">🚶 Walking &amp; Activity</h3>
+					<p class="text-text-muted text-sm">{walking}</p>
+				</div>
+				<div class="bg-pink-light rounded-[22px] p-7">
+					<h3 class="font-heading font-semibold text-lg mb-4">🏡 Life at Home</h3>
+					<ul class="flex flex-col gap-2.5 text-sm">
+						{homeLife.map((item) => <li>♡ {item}</li>)}
+					</ul>
+				</div>
+				<div class="bg-pink-light rounded-[22px] p-7">
+					<h3 class="font-heading font-semibold text-lg mb-4">🐕 Other Dogs</h3>
+					<p class="text-text-muted text-sm">{otherDogs}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24">
 			<h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-10">Her Ideal Home</h2>
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 				{idealHome.map((item) => (
@@ -130,6 +157,22 @@ const rescueWebsiteUrl = 'https://www.mustluvboxersrescue.com/';
 				))}
 			</div>
 		</div>
+
+		<section class="bg-cream">
+			<div class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24">
+				<h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-3">More About Abby</h2>
+				<p class="text-text-muted text-center mb-10">We're still building out her full profile &mdash; check back soon.</p>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+					{comingSoon.map((item) => (
+						<div class="rounded-[20px] border border-dashed border-pink p-7 text-center">
+							<span class="block text-2xl mb-3 opacity-60">{item.icon}</span>
+							<h3 class="font-heading font-semibold mb-1">{item.title}</h3>
+							<p class="text-text-muted text-xs">Coming soon</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
 
 		<div class="mx-6 md:mx-12 mb-16 md:mb-24 rounded-[28px] bg-gradient-to-br from-pink-accent to-pink-light px-6 md:px-12 py-14 md:py-18 text-center">
 			<h2 class="font-heading font-bold text-3xl md:text-4xl mb-3">Could {title} be your next family member?</h2>
